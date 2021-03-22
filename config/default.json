@@ -10,9 +10,5 @@
     "namespaces": {
       "game": "game_"
     }
-  },
-  "mongo": {
-    "name": "kalaha",
-    "host": "127.0.0.1"
   }
 }

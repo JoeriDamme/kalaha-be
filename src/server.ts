@@ -6,7 +6,6 @@ import ConfigReport from '@lib/config-reporter';
 import { logger } from '@lib/logger';
 const log = logger.child({ method: 'server' });
 import mongoose from 'mongoose';
-import config from 'config';
 
 dotenv.config();
 const port: string|number = process.env.EXPRESS_PORT as string || 8081; // Default port to listen
@@ -17,11 +16,11 @@ const port: string|number = process.env.EXPRESS_PORT as string || 8081; // Defau
 
   // Connecting with database.
   try {
-    await mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${config.get('mongo.host')}/${config.get('mongo.name')}`, {
+    await mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/${process.env.MONGO_DBNAME}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
-      useCreateIndex: true
+      useCreateIndex: true,
     });
   } catch (error) {
     log.error(`MongoError: ${error.message}`);
