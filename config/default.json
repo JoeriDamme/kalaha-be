@@ -1,0 +1,18 @@
+{
+  "logger": {
+    "level": "info",
+    "path": "/var/log/",
+    "fileName": "debug.log"
+  },
+  "cache": {
+    "ttl": 3600,
+    "checkperiod": 600,
+    "namespaces": {
+      "game": "game_"
+    }
+  },
+  "mongo": {
+    "name": "kalaha",
+    "host": "127.0.0.1"
+  }
+}

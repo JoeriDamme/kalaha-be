@@ -1,0 +1,5 @@
+node_modules
+dist
+test
+integration-test
+mocha.require.js
